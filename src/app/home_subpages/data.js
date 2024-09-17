@@ -28,7 +28,11 @@ export default function Data() {
 
     return (
         <div className="data-page">
-            <h1>Hi!</h1>
+            <div className="about-content">
+                <div className="about-section-title light-mode-text" data-aos="fade-up"> 
+                    <SectionTitle title="DATA" />
+                </div>
+            </div>
         </div>
     );
 }

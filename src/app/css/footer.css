@@ -66,6 +66,36 @@
     text-decoration: underline;
 }
 
+
+@media (prefers-color-scheme: light) {
+
+    .light-mode-footer {
+        background: #fff;
+    }
+
+    .light-mode-text {
+        color: #fff; 
+    }
+
+    .track-title {
+        color: black;
+    }
+
+    .footer-info {
+        color:black;
+    }
+  
+}
+
+@media (prefers-color-scheme: dark) {
+    .light-mode-text {
+        color: inherit;
+    }
+    .dark-mode .section-title {
+        color: white;
+      }
+    }
+
 @media (max-width: 768px) {
 
     .tracks {

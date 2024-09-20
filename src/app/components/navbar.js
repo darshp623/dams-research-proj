@@ -44,13 +44,13 @@ export default function Navbar() {
             </Link>
             <Link
               id="left-nav-button"
-              to="about"
+              to="data"
               smooth="true"
               duration={500}
               className="nav-link light-mode-text"
               href="#data"
             >
-              About
+              Data
             </Link>
             <Link
               id="left-nav-button"

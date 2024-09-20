@@ -27,9 +27,9 @@ export default function Data() {
     }
 
     return (
-        <div className="data-page">
-            <div className="about-content">
-                <div className="about-section-title light-mode-text" data-aos="fade-up"> 
+        <div className="data-page light-mode-page">
+            <div className="data-content">
+                <div className="data-section-title light-mode-text" data-aos="fade-up"> 
                     <SectionTitle title="DATA" />
                 </div>
             </div>

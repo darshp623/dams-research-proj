@@ -4,7 +4,7 @@
     justify-content: center; /*center content*/
     align-items: center;
     min-height: 100vh; /*fill page*/
-    background: radial-gradient(125% 125% at 50% 90%, #000 40%, #fff 100%); /*for blend*/
+    background: radial-gradient(#000 100%); /*for blend*/
 }
 
 .light-mode-text {
@@ -12,15 +12,28 @@
 }
 
 @media (prefers-color-scheme: light) {
-    .light-mode-text {
-        color: #fff; 
+
+    .light-mode-page {
+        background: #fff;
     }
+
+    .light-mode-text {
+        color: black; 
+    }
+
+    .light-mode .data-section-title {
+        color: black;
+    }
+  
 }
 
 @media (prefers-color-scheme: dark) {
     .light-mode-text {
         color: inherit;
     }
+    .dark-mode .section-title {
+        color: white;
+      }
 }
 
 /*added light mode text coloring*/

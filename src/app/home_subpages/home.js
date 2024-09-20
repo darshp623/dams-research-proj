@@ -36,13 +36,11 @@ export default function Home() {
 
   return (
     <div className="home-page">
-      <div
-        className="home-container"
-        style={{
-          background:
-            "radial-gradient(125% 125% at 50% 10%, #000 40%, #fff 100%)",
-        }}
-      >
+      <div className="home-container light-mode-background"
+        style={{ background: "radial-gradient(#000 100%)", }} >
+        <div className= "home-title"> 
+          
+        </div>
       </div>
     </div>
   );

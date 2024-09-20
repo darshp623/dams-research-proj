@@ -27,7 +27,7 @@ export default function Footer() {
     }
 
     return (
-        <div className="footer-page">
+        <div className="footer-page light-mode-footer">
             <div className="footer-content" data-aos="fade-in">
                 <div className="tracks flex"> {/* adjusted the className styling for centering on mobile for tracks */}
                     <Track title="TWITTER" link="https://x.com/darshp623">

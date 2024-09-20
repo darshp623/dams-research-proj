@@ -15,15 +15,29 @@
 }
 
 @media (prefers-color-scheme: light) {
+
+    .light-mode-background {
+        background: #fff;
+    }
+
     .light-mode-text {
         color: #fff; 
     }
+
+    .light-mode .section-title {
+        color: black;
+    }
+  
 }
 
 @media (prefers-color-scheme: dark) {
     .light-mode-text {
         color: inherit;
     }
+    .dark-mode .section-title {
+        color: white;
+      }
+      
 }
 
 @media (max-width: 1400px) {

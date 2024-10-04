@@ -144,10 +144,23 @@ export default function Data() {
         setCurrentResults([]);
     };
 
-    // Function to switch the company tab
+
+    const [loading, setLoading] = useState(false);
+    const [isTableVisible, setIsTableVisible] = useState(true);
+
     const switchCompany = (company) => {
         setSelectedCompany(company);
+        setIsTableVisible(false); // Hide table first
+        setLoading(true);
+        
+        // Simulate data fetching delay
+        setTimeout(() => {
+            setSelectedCompany(company);
+            setIsTableVisible(true); // Show table after a brief delay
+            setLoading(false);
+        }, 300); // Duration of the fade effect
     };
+
 
     return (
         <div className={`data-page ${isDarkMode ? 'dark-mode-page' : 'light-mode-page'}`}>
@@ -158,18 +171,18 @@ export default function Data() {
                 <div className={`data-title-subheading ${isDarkMode ? 'dark-mode-text' : 'light-mode-text'}`} data-aos="fade-up">
                     Experiment Data Overview
                 </div>
-
-
                 {/* Table for experiment data */}
-                <div className="overflow-x-hidden mt-4" data-aos="fade-up">
-                    <table className="min-w-full bg-blue-50 text-center justify-center text-sm shadow-md">
+                <div>
+                {loading && <div className="loading-indicator">Loading data...</div>}
+                <div className={`overflow-x-hidden mt-4 ${isTableVisible ? '' : 'hidden'}`}>
+                    <table className={`min-w-full bg-blue-50 text-center justify-center text-sm shadow-md table-transition`}>
                         {/* Company Tabs */}
                         <thead className="bg-blue-950 text-white uppercase text-md">
                             <tr>
                                 <th colSpan="3" className="py-3 px-6">
                                     <div className="tabs" data-aos="fade-up">
                                     {companies.map((company) => (
-                                        <button 
+                                        <button
                                             key={company}
                                             onClick={() => switchCompany(company)}
                                             className={`tab-button ${selectedCompany === company ? 'active-tab' : ''}`}
@@ -180,7 +193,7 @@ export default function Data() {
                                     </div>
                                 </th>
                             </tr>
-                            <tr>
+                            <tr data-aos="fade-in">
                                 <th className="py-3 px-6">LLM</th>
                                 <th className="py-3 px-6">Experiment Number</th>
                                 <th className="py-3 px-6">Results</th>
@@ -203,9 +216,9 @@ export default function Data() {
                             ))}
                         </tbody>
                     </table>
+                    </div>
                 </div>
             </div>
-
             {/* Modal Component with inline styling based on dark mode */}
             <Modal
                 isOpen={isModalOpen}

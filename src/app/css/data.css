@@ -161,6 +161,7 @@ th:nth-child(3), td:nth-child(3) {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 /* Title and content styles inside the modal */
@@ -176,6 +177,11 @@ th:nth-child(3), td:nth-child(3) {
 .Modal p {  
     margin: 5px 0; /* Add spacing for answers */
     color: black !important;
+    text-align: center;
+}
+
+.Modal li {
+    text-align: center !important;
 }
 
 /* Close button styling */

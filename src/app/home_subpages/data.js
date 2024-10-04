@@ -223,11 +223,11 @@ export default function Data() {
                     }
                 }}
             >
-                <h2 style={{ color: isDarkMode ? '#00ffb3' : '#00ff15' }}>Results</h2>
+                <h2 style={{ color: isDarkMode ? '#00ffb3' : '#00ff15', textAlign: 'center'}}>Results</h2>
                 {currentResults && currentResults.map((result, index) => (
                     <div key={index}>
-                        <h3 style={{ color: isDarkMode ? '#ffffff' : '#000000' }}>{result.Question}</h3>
-                        <p style={{ color: isDarkMode ? '#d1d5db' : '#000000' }}>
+                        <h3 style={{ color: isDarkMode ? '#ffffff' : '#000000', textAlign: 'center' }}>{result.Question}</h3>
+                        <p style={{ color: isDarkMode ? '#d1d5db' : '#000000' , textAlign: 'center'}}>
                             <strong>Answer:</strong> {result.Answer}
                         </p>
                         <p style={{ color: isDarkMode ? '#d1d5db' : '#000000' }}>
@@ -238,7 +238,7 @@ export default function Data() {
                                 <p style={{ color: isDarkMode ? '#d1d5db' : '#000000' }}>
                                     <strong>Score:</strong>
                                 </p>
-                                <ul style={{ color: isDarkMode ? '#d1d5db' : '#000000' }}>
+                                <ul style={{ color: isDarkMode ? '#d1d5db' : '#000000', textAlign: 'center' }}>
                                     <li>Completeness: {result.Score.completeness}</li>
                                     <li>Clarity: {result.Score.clarity}</li>
                                     <li>Reference: {result.Score.reference}</li>

@@ -71,6 +71,35 @@ table {
     table-layout: fixed; /* makes sure columns have equal widths */
 }
 
+/* Tabs style */
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem; /* Adds some spacing below the tabs */
+}
+
+.tab-button {
+    background-color: transparent; /* Ensure transparency */
+    border: none;
+    color: #fff; /* Default tab text color */
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    margin-right: 1rem; /* Space between tabs */
+    border-bottom: 3px solid transparent; /* For active tab underline */
+    width: auto;
+}
+
+.tab-button:hover {
+    color: #00ff15; /* Change color on hover */
+}
+
+.tab-button.active-tab {
+    color: #00ffb3; /* Color for the active tab */
+    border-bottom: 3px solid #00ffb3; /* Active tab underline */
+}
+
 thead {
     color: white;
     text-transform: uppercase;
@@ -94,7 +123,7 @@ td {
     color: #000000;
 }
 
-/* COLUMN BALANCING (for reference next year lolz) */
+/* Ensure first tab column is larger */
 th:nth-child(1), td:nth-child(1) {
     width: 25%; 
 }

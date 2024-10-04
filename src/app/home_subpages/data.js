@@ -159,23 +159,27 @@ export default function Data() {
                     Experiment Data Overview
                 </div>
 
-                {/* Company Tabs */}
-                <div className="tabs" data-aos="fade-up">
-                    {companies.map((company) => (
-                        <button 
-                            key={company}
-                            onClick={() => switchCompany(company)}
-                            className={`tab-button ${selectedCompany === company ? 'active-tab' : ''}`}
-                        >
-                            {company}
-                        </button>
-                    ))}
-                </div>
 
                 {/* Table for experiment data */}
                 <div className="overflow-x-hidden mt-4" data-aos="fade-up">
                     <table className="min-w-full bg-blue-50 text-center justify-center text-sm shadow-md">
+                        {/* Company Tabs */}
                         <thead className="bg-blue-950 text-white uppercase text-md">
+                            <tr>
+                                <th colSpan="3" className="py-3 px-6">
+                                    <div className="tabs" data-aos="fade-up">
+                                    {companies.map((company) => (
+                                        <button 
+                                            key={company}
+                                            onClick={() => switchCompany(company)}
+                                            className={`tab-button ${selectedCompany === company ? 'active-tab' : ''}`}
+                                        >
+                                            {company}
+                                        </button>
+                                        ))}
+                                    </div>
+                                </th>
+                            </tr>
                             <tr>
                                 <th className="py-3 px-6">LLM</th>
                                 <th className="py-3 px-6">Experiment Number</th>

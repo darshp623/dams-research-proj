@@ -15,23 +15,98 @@ export default function Data() {
         });
     }, []);
 
-    const [experiments] = useState([
-        { number: 1, title: "Gemma 2", results: "Spotify/gemma2_answers_expOne.json" },
-        { number: 2, title: "Gemma 2", results: "Spotify/gemma2_answers_expTwo.json" },
-        { number: 3, title: "Gemma 2", results: "Spotify/gemma2_answers_expThree.json" },
-        { number: 1, title: "Llama 3.1", results: "Spotify/llama3.1_answers_expOne.json" },
-        { number: 2, title: "Llama 3.1", results: "Spotify/llama3.1_answers_expTwo.json" },
-        { number: 3, title: "Llama 3.1", results: "Spotify/llama3.1_answers_expThree.json" },
-        { number: 1, title: "Llava", results: "Spotify/llava_answers_expOne.json" },
-        { number: 2, title: "Llava", results: "Spotify/llava_answers_expTwo.json" },
-        { number: 3, title: "Llava", results: "Spotify/llava_answers_expThree.json" },
-        { number: 1, title: "Mistral", results: "Spotify/mistral_answers_expOne.json" },
-        { number: 2, title: "Mistral", results: "Spotify/mistral_answers_expTwo.json" },
-        { number: 3, title: "Mistral", results: "Spotify/mistral_answers_expThree.json" },
-        { number: 1, title: "Qwen 2", results: "Spotify/qwen2_answers_expOne.json" },
-        { number: 2, title: "Qwen 2", results: "Spotify/qwen2_answers_expTwo.json" },
-        { number: 3, title: "Qwen 2", results: "Spotify/qwen2_answers_expThree.json" }
-    ]);
+    const companies = ["Spotify", "Twitter", "Airbnb", "Uber", "Facebook",]; // Define companies
+
+    // Initialize state for experiments
+    const [experiments] = useState({
+        "Spotify": [
+            { number: 1, title: "Gemma 2", results: "Spotify/gemma2expOne_full.json" },
+            { number: 2, title: "Gemma 2", results: "Spotify/gemma2expTwo_full.json" },
+            { number: 3, title: "Gemma 2", results: "Spotify/gemma2expThree_full.json" },
+            { number: 1, title: "Llama 3.1", results: "Spotify/llama3.1expOne_full.json" },
+            { number: 2, title: "Llama 3.1", results: "Spotify/llama3.1expTwo_full.json" },
+            { number: 3, title: "Llama 3.1", results: "Spotify/llama3.1expThree_full.json" },
+            { number: 1, title: "Llava", results: "Spotify/llavaexpOne_full.json" },
+            { number: 2, title: "Llava", results: "Spotify/llavaexpTwo_full.json" },
+            { number: 3, title: "Llava", results: "Spotify/llavaexpThree_full.json" },
+            { number: 1, title: "Mistral", results: "Spotify/mistralexpOne_full.json" },
+            { number: 2, title: "Mistral", results: "Spotify/mistralexpTwo_full.json" },
+            { number: 3, title: "Mistral", results: "Spotify/mistralexpThree_full.json" },
+            { number: 1, title: "Qwen 2", results: "Spotify/qwen2expOne_full.json" },
+            { number: 2, title: "Qwen 2", results: "Spotify/qwen2expTwo_full.json" },
+            { number: 3, title: "Qwen 2", results: "Spotify/qwen2expThree_full.json" },
+        ],
+        "Twitter": [
+            { number: 1, title: "Gemma 2", results: "Twitter/gemma2expOne_full.json" },
+            { number: 2, title: "Gemma 2", results: "Twitter/gemma2expTwo_full.json" },
+            { number: 3, title: "Gemma 2", results: "Twitter/gemma2expThree_full.json" },
+            { number: 1, title: "Llama 3.1", results: "Twitter/llama3.1expOne_full.json" },
+            { number: 2, title: "Llama 3.1", results: "Twitter/llama3.1expTwo_full.json" },
+            { number: 3, title: "Llama 3.1", results: "Twitter/llama3.1expThree_full.json" },
+            { number: 1, title: "Llava", results: "Twitter/llavaexpOne_full.json" },
+            { number: 2, title: "Llava", results: "Twitter/llavaexpTwo_full.json" },
+            { number: 3, title: "Llava", results: "Twitter/llavaexpThree_full.json" },
+            { number: 1, title: "Mistral", results: "Twitter/mistralexpOne_full.json" },
+            { number: 2, title: "Mistral", results: "Twitter/mistralexpTwo_full.json" },
+            { number: 3, title: "Mistral", results: "Twitter/mistralexpThree_full.json" },
+            { number: 1, title: "Qwen 2", results: "Twitter/qwen2expOne_full.json" },
+            { number: 2, title: "Qwen 2", results: "Twitter/qwen2expTwo_full.json" },
+            { number: 3, title: "Qwen 2", results: "Twitter/qwen2expThree_full.json" },
+        ],
+        "Airbnb": [
+            { number: 1, title: "Gemma 2", results: "Airbnb/gemma2expOne_full.json" },
+            { number: 2, title: "Gemma 2", results: "Airbnb/gemma2expTwo_full.json" },
+            { number: 3, title: "Gemma 2", results: "Airbnb/gemma2expThree_full.json" },
+            { number: 1, title: "Llama 3.1", results: "Airbnb/llama3.1expOne_full.json" },
+            { number: 2, title: "Llama 3.1", results: "Airbnb/llama3.1expTwo_full.json" },
+            { number: 3, title: "Llama 3.1", results: "Airbnb/llama3.1expThree_full.json" },
+            { number: 1, title: "Llava", results: "Airbnb/llavaexpOne_full.json" },
+            { number: 2, title: "Llava", results: "Airbnb/llavaexpTwo_full.json" },
+            { number: 3, title: "Llava", results: "Airbnb/llavaexpThree_full.json" },
+            { number: 1, title: "Mistral", results: "Airbnb/mistralexpOne_full.json" },
+            { number: 2, title: "Mistral", results: "Airbnb/mistralexpTwo_full.json" },
+            { number: 3, title: "Mistral", results: "Airbnb/mistralexpThree_full.json" },
+            { number: 1, title: "Qwen 2", results: "Airbnb/qwen2expOne_full.json" },
+            { number: 2, title: "Qwen 2", results: "Airbnb/qwen2expTwo_full.json" },
+            { number: 3, title: "Qwen 2", results: "Airbnb/qwen2expThree_full.json" },
+        ],
+        "Uber": [
+            { number: 1, title: "Gemma 2", results: "Uber/gemma2expOne_full.json" },
+            { number: 2, title: "Gemma 2", results: "Uber/gemma2expTwo_full.json" },
+            { number: 3, title: "Gemma 2", results: "Uber/gemma2expThree_full.json" },
+            { number: 1, title: "Llama 3.1", results: "Uber/llama3.1expOne_full.json" },
+            { number: 2, title: "Llama 3.1", results: "Uber/llama3.1expTwo_full.json" },
+            { number: 3, title: "Llama 3.1", results: "Uber/llama3.1expThree_full.json" },
+            { number: 1, title: "Llava", results: "Uber/llavaexpOne_full.json" },
+            { number: 2, title: "Llava", results: "Uber/llavaexpTwo_full.json" },
+            { number: 3, title: "Llava", results: "Uber/llavaexpThree_full.json" },
+            { number: 1, title: "Mistral", results: "Uber/mistralexpOne_full.json" },
+            { number: 2, title: "Mistral", results: "Uber/mistralexpTwo_full.json" },
+            { number: 3, title: "Mistral", results: "Uber/mistralexpThree_full.json" },
+            { number: 1, title: "Qwen 2", results: "Uber/qwen2expOne_full.json" },
+            { number: 2, title: "Qwen 2", results: "Uber/qwen2expTwo_full.json" },
+            { number: 3, title: "Qwen 2", results: "Uber/qwen2expThree_full.json" },
+        ],
+        "Facebook": [
+            { number: 1, title: "Gemma 2", results: "Facebook/gemma2expOne_full.json" },
+            { number: 2, title: "Gemma 2", results: "Facebook/gemma2expTwo_full.json" },
+            { number: 3, title: "Gemma 2", results: "Facebook/gemma2expThree_full.json" },
+            { number: 1, title: "Llama 3.1", results: "Facebook/llama3.1expOne_full.json" },
+            { number: 2, title: "Llama 3.1", results: "Facebook/llama3.1expTwo_full.json" },
+            { number: 3, title: "Llama 3.1", results: "Facebook/llama3.1expThree_full.json" },
+            { number: 1, title: "Llava", results: "Facebook/llavaexpOne_full.json" },
+            { number: 2, title: "Llava", results: "Facebook/llavaexpTwo_full.json" },
+            { number: 3, title: "Llava", results: "Facebook/llavaexpThree_full.json" },
+            { number: 1, title: "Mistral", results: "Facebook/mistralexpOne_full.json" },
+            { number: 2, title: "Mistral", results: "Facebook/mistralexpTwo_full.json" },
+            { number: 3, title: "Mistral", results: "Facebook/mistralexpThree_full.json" },
+            { number: 1, title: "Qwen 2", results: "Facebook/qwen2expOne_full.json" },
+            { number: 2, title: "Qwen 2", results: "Facebook/qwen2expTwo_full.json" },
+            { number: 3, title: "Qwen 2", results: "Facebook/qwen2expThree_full.json" },
+        ],
+    });
+
+    const [selectedCompany, setSelectedCompany] = useState("Spotify"); // Default to Spotify
 
     // State for dark mode detection
     const [isDarkMode, setIsDarkMode] = useState(
@@ -69,6 +144,11 @@ export default function Data() {
         setCurrentResults([]);
     };
 
+    // Function to switch the company tab
+    const switchCompany = (company) => {
+        setSelectedCompany(company);
+    };
+
     return (
         <div className={`data-page ${isDarkMode ? 'dark-mode-page' : 'light-mode-page'}`}>
             <div className="data-content">
@@ -78,6 +158,20 @@ export default function Data() {
                 <div className={`data-title-subheading ${isDarkMode ? 'dark-mode-text' : 'light-mode-text'}`} data-aos="fade-up">
                     Experiment Data Overview
                 </div>
+
+                {/* Company Tabs */}
+                <div className="tabs" data-aos="fade-up">
+                    {companies.map((company) => (
+                        <button 
+                            key={company}
+                            onClick={() => switchCompany(company)}
+                            className={`tab-button ${selectedCompany === company ? 'active-tab' : ''}`}
+                        >
+                            {company}
+                        </button>
+                    ))}
+                </div>
+
                 {/* Table for experiment data */}
                 <div className="overflow-x-hidden mt-4" data-aos="fade-up">
                     <table className="min-w-full bg-blue-50 text-center justify-center text-sm shadow-md">
@@ -89,8 +183,8 @@ export default function Data() {
                             </tr>
                         </thead>
                         <tbody className={`text-blue-900 ${isDarkMode ? 'dark-mode-text' : 'light-mode-text'}`}>
-                            {experiments.map(exp => (
-                                <tr key={exp.number} className="border-b hover:bg-gray-100 transition duration-300">
+                            {experiments[selectedCompany].map((exp, index) => (
+                                <tr key={index} className="border-b hover:bg-gray-100 transition duration-300">
                                     <td className="border-b py-3 px-6">{exp.title}</td>
                                     <td className="border-b py-3 px-6">{exp.number}</td>
                                     <td className="border-b py-3 px-6">
@@ -132,6 +226,23 @@ export default function Data() {
                         <p style={{ color: isDarkMode ? '#d1d5db' : '#000000' }}>
                             <strong>Answer:</strong> {result.Answer}
                         </p>
+                        <p style={{ color: isDarkMode ? '#d1d5db' : '#000000' }}>
+                            <strong>Reviewer:</strong> {result.Reviewer}
+                        </p>
+                        {result.Score && (
+                            <div>
+                                <p style={{ color: isDarkMode ? '#d1d5db' : '#000000' }}>
+                                    <strong>Score:</strong>
+                                </p>
+                                <ul style={{ color: isDarkMode ? '#d1d5db' : '#000000' }}>
+                                    <li>Completeness: {result.Score.completeness}</li>
+                                    <li>Clarity: {result.Score.clarity}</li>
+                                    <li>Reference: {result.Score.reference}</li>
+                                    <li>Relevance: {result.Score.relevance}</li>
+                                    <li>Accuracy: {result.Score.accuracy}</li>
+                                </ul>
+                            </div>
+                        )}
                     </div>
                 ))}
                 <button

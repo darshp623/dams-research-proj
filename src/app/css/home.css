@@ -5,14 +5,14 @@
     align-items: center;
     height: auto;
     background: #23252f; /* Dark mode background */
-    color: white;
+    color: #ffffff;
     overflow-x: hidden;
     overflow-y: hidden;
     overflow: hidden;
 }
 
 .home-container {
-    width: 1600px;
+    width: 1000px;
     text-align: center;
     justify-content: center;
     margin: 0 auto;
@@ -24,7 +24,7 @@
 }
 
 .home-title {
-    color: white;
+    color: #ffffff;
     margin-bottom: 40px;
 }
 
@@ -33,6 +33,7 @@ h1 {
     font-weight: 700;
     margin-bottom: 20px;
     color: #fff;
+    text-align: center;
 }
 
 .description {
@@ -64,6 +65,7 @@ h3 {
 p {
     margin: 10px 0;
     color: #aaa;
+    text-align: center;
 }
 
 /* Navbar fixes to prevent overlap */
@@ -90,7 +92,7 @@ p {
 /* Light and dark mode adjustments */
 @media (prefers-color-scheme: light) {
     .home-page {
-        background-color: #f4f4f4;
+        background-color: #ffffff;
     }
 
     .home-container {

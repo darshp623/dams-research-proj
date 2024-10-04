@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import "../css/home.css";
 import { useEffect, useState } from "react";
 import AOS from "aos";
@@ -14,9 +13,9 @@ export default function Home() {
     });
   }, []);
 
-  const [isMobile, setIsMobile] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
 
-  // handle resize
+  // Handle resize
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
@@ -35,11 +34,37 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="home-page">
-      <div className="home-container light-mode-background"
-        style={{ background: "radial-gradient(#000 100%)", }} >
-        <div className= "home-title"> 
-          
+    <div className="home-page light-mode-background">
+      <div className="home-container">
+        <div className="home-title">
+          <h1>GenAIPABench Repository</h1>
+          <p className="description">
+            This repository contains files and documents related to GenAIPABench benchmark.
+          </p>
+          <div className="content">
+            <h2>Contents</h2>
+            <h3>Data Regulation Questions:</h3>
+            <p>A paraphrased list of questions related to data regulations.</p>
+            <p>The original list of questions pertaining to data regulations.</p>
+
+            <h3>Privacy Policy Questions:</h3>
+            <p>A paraphrased list of questions related to privacy policies.</p>
+            <p>The original list of questions about privacy policies.</p>
+
+            <h3>Annotated Answers:</h3>
+            <p>
+              A folder containing annotated answers to the provided questions for 5 privacy
+              policies (Twitter, Facebook, Airbnb, Uber, Spotify).
+            </p>
+
+            <h3>Privacy Documents:</h3>
+            <p>
+              A folder containing various privacy-related documents to 5 privacy policies (Twitter, Facebook, Airbnb, Uber, Spotify).
+            </p>
+
+            <h3>Usage Results:</h3>
+            <p>A folder containing various results from the various experiments.</p>
+          </div>
         </div>
       </div>
     </div>

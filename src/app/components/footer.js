@@ -30,11 +30,8 @@ export default function Footer() {
         <div className="footer-page light-mode-footer">
             <div className="footer-content" data-aos="fade-in">
                 <div className="tracks flex"> {/* adjusted the className styling for centering on mobile for tracks */}
-                    <Track title="TWITTER" link="https://x.com/darshp623">
-                        <img src="/twitter.png" alt="twitter-png" className="track-image"/>
-                    </Track>
-                    <Track title="INSTAGRAM" link="https://www.instagram.com/darsh._.p">
-                        <img src="/instagram.png" alt="insta-png" className="track-image"/>
+                    <Track title="DAMS" link="https://damslabumbc.github.io/">
+                        <img src="/umbc.png" alt="research-png" className="track-image"/>
                     </Track>
                     <Track title="GITHUB" link="https://github.com/darshp623/dams-research-proj">
                         <img src="/github.PNG" alt="github-png" className="track-image"/>

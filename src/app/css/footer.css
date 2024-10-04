@@ -4,7 +4,7 @@
     align-items: center;
     width: 100%;
     min-height: 20vh; 
-    background-color: rgb(0, 0, 0);
+    background-color: #23252f;
     padding: 5px 0;
     padding-bottom: 20px;
 }
@@ -17,8 +17,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px; 
-    margin-bottom: 10px; 
+    gap: 0px; 
+    margin-bottom: -50px; 
     flex-wrap: wrap;
 }
 

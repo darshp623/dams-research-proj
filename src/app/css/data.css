@@ -1,49 +1,235 @@
 .data-page {
+    padding: 2rem;
+    background: #23252f;
+    min-height: 100vh;
     display: flex;
-    flex-direction: column;
-    justify-content: center; /*center content*/
+    justify-content: center;
     align-items: center;
-    min-height: 100vh; /*fill page*/
-    background: radial-gradient(#000 100%); /*for blend*/
+    flex-direction: column;
+    align-items: center;
+}
+
+.data-title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+}
+
+.data-section-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.data-title-subheading {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #d1d5db;
+}
+
+.data-content {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 150px;
+    justify-content: center;
+    align-items: center;
+}
+
+/*button styles*/
+.data-day-switch button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.data-day-switch button:hover {
+    color: #00ff15;
+    border-bottom: 3px double #00ff15; 
+}
+
+.tab-button.active-tab {
+    color: #00ffb3;
+    border-bottom: 3px solid #00ffb3; 
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* ensures the table behaves properly */
+    border-radius: 15px;
+    overflow: hidden; 
+    margin: auto;
+    table-layout: fixed; /* makes sure columns have equal widths */
+}
+
+thead {
+    color: white;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+th, td {
+    padding: 1rem;
+    text-align: center;
+}
+
+tbody tr {
+    border-bottom: 1px solid #e5e7eb;
+    background-color: #ffffff; 
+}
+
+td {
+    font-size: 0.9rem;
+    font-weight: 1.1rem;
+    color: #000000;
+}
+
+/* COLUMN BALANCING (for reference next year lolz) */
+th:nth-child(1), td:nth-child(1) {
+    width: 25%; 
+}
+
+th:nth-child(2), td:nth-child(2) {
+    width: 50%;
+}
+
+th:nth-child(3), td:nth-child(3) {
+    width: 25%;
+}
+
+.Modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #ffffff; /* Darker background for contrast */
+    color: black !important;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000; /* Ensure modal is on top */
+}
+
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+    z-index: 999; /* Ensure overlay is below the modal */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Title and content styles inside the modal */
+.Modal h2 {
+    color: #00ffb3; /* Change title color for emphasis */
+}
+
+.Modal h3 {
+    margin: 10px 0; /* Add spacing for questions */
+    color: #000000 !important; /* Slightly lighter than the background */
+}
+
+.Modal p {  
+    margin: 5px 0; /* Add spacing for answers */
+    color: black !important;
+}
+
+/* Close button styling */
+.Modal button {
+    margin-top: 15px; /* Spacing above the button */
+    padding: 10px 15px;
+    background-color: #00ff15; /* Button background color */
+    border: none;
+    border-radius: 5px;
+    color: #23232f; /* Button text color */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.Modal button:hover {
+    background-color: #00cc12; /* Darker shade on hover */
+}
+
+/* Light Mode */
+.light-mode-page {
+    background-color: #ffffff;
+    color: #000000;
 }
 
 .light-mode-text {
-    color: #fff;
+    color: #000000;
 }
 
-@media (prefers-color-scheme: light) {
-
-    .light-mode-page {
-        background: #fff;
-    }
-
-    .light-mode-text {
-        color: black; 
-    }
-
-    .light-mode .data-section-title {
-        color: black;
-    }
-  
+/* Dark Mode */
+.dark-mode-page {
+    background-color: #23232f;
+    color: #ffffff;
 }
 
-@media (prefers-color-scheme: dark) {
-    .light-mode-text {
-        color: inherit;
-    }
-    .dark-mode .section-title {
-        color: white;
-      }
+.dark-mode-text {
+    color: #ffffff;
 }
 
-/*added light mode text coloring*/
+/* Modal specific */
+.Modal.light-mode {
+    background-color: white;
+    color: black;
+}
 
+
+/*makes sure event tab is larger, while the other columns stay the same size*/
+
+/*mobile*/
 @media (max-width: 768px) {
-
-    .data-page {
-        width: 100%;
-        overflow-x: hidden;
-        overflow-y: hidden;
+    table {
+        font-size: 0.85rem;
+        scale: .95;
+        width: 100%; 
+        border-radius: 5px;
         overflow: hidden;
+    }
+
+    th, td {
+        padding: 0.75rem;
+    }
+    
+    .data-content {
+        margin-bottom: 0px;
+    }
+
+    .data-title-subheading {
+        font-size: 1rem;
+    }
+
+    .data-day-switch button {
+        font-size: 0.85rem;
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    table {
+        font-size: 0.85rem;
+        scale: .95;
+        margin: auto 0;
+        width: 100%; 
+        border-radius: 5px;
+        overflow: hidden;
+        margin-bottom: 100px;
     }
 }

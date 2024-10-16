@@ -167,10 +167,10 @@ export default function Data() {
     return (
         <div className={`data-page ${isDarkMode ? 'dark-mode-page' : 'light-mode-page'}`}>
             <div className="data-content">
-                <div className={`data-section-title ${isDarkMode ? 'dark-mode-text' : 'light-mode-text'}`} data-aos="fade-up">
+                <div className={`data-section-title ${isDarkMode ? 'dark-mode-text' : 'light-mode-text'}`} data-aos="fade-in">
                     <SectionTitle title="DATA" />
                 </div>
-                <div className={`data-title-subheading ${isDarkMode ? 'dark-mode-text' : 'light-mode-text'}`} data-aos="fade-up">
+                <div className={`data-title-subheading ${isDarkMode ? 'dark-mode-text' : 'light-mode-text'}`} data-aos="fade-in">
                     Experiment Data Overview
                 </div>
                 {/* Table for experiment data */}
@@ -182,7 +182,7 @@ export default function Data() {
                         <thead className="bg-blue-950 text-white uppercase text-md">
                             <tr>
                                 <th colSpan="3" className="py-3 px-6">
-                                    <div className="tabs" data-aos="fade-up">
+                                    <div className="tabs" data-aos="fade-in">
                                     {companies.map((company) => (
                                         <button
                                             key={company}

@@ -37,31 +37,31 @@ export default function Home() {
     <div className="home-page light-mode-background">
       <div className="home-container">
         <div className="home-title">
-          <h1>GenAIPABench</h1>
-          <h2 className="description">
+          <h1 data-aos="fade-in">GenAIPABench</h1>
+          <h2 className="description" data-aos="fade-in">
             This site contains results of the questions and answers used for the LLM testing.
           </h2>
           <div className="content">
-            <h2>Experiments</h2>
-            <p>Provided any number of Questions, Annotated Answers, and List of Company Documents. 
+            <h2 data-aos="fade-in">Experiments</h2>
+            <p data-aos="fade-in">Provided any number of Questions, Annotated Answers, and List of Company Documents. 
               The python code is capable of making numerous and orderly API calls to locally run LLMs to both answer the question list, 
               and peer review one another with the corresponding scores.
             </p>
 
-            <h3>Prepare before running the code</h3>
-            <p>Provide in adjacent files to the main and experiments python file your Companies Policy 
+            <h3 data-aos="fade-in">Prepare before running the code</h3>
+            <p data-aos="fade-in">Provide in adjacent files to the main and experiments python file your Companies Policy 
               Documents as text file, Companies Annotated Answers as csv, and question_list as csv.
             Make sure that each Annotated Answer matches with the line of the question_list csv.</p>
 
-            <h3>How to Run</h3>
-            <p>
+            <h3 data-aos="fade-in">How to Run</h3>
+            <p data-aos="fade-in">
             Provide the names of the companies in main, add or remove models that you want to use in experiments.py.
             Note: Code is intended to work with Ollama Server, please ensure you have this installed and all models 
             used are pulled using ollama. Once all of this is provided, run the code with python3 main.py
             </p>
 
-            <h3>Python Code Flow</h3>
-            <p>
+            <h3 data-aos="fade-in">Python Code Flow</h3>
+            <p data-aos="fade-in">
             From main, code iterates through the list of companies and calls the 'experiments' function to run 3 experiments given ith 
             company from the list.Within 'experiments', code then iterates again through each of the experiments (one, two, and three).
             Each time, we will read the coresponding policy document for the company. Make nth amount of API calls to answer the questions 

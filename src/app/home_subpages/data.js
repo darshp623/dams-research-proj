@@ -109,7 +109,7 @@ export default function Data() {
     const [selectedCompany, setSelectedCompany] = useState("Spotify"); // Default to Spotify
 
     // State for dark mode detection
-    const [isDarkMode, setIsDarkMode] = useState(false);``
+    const [isDarkMode, setIsDarkMode] = useState(false);
 
     // UseEffect to detect and listen to system theme changes (client-side only)
     useEffect(() => {

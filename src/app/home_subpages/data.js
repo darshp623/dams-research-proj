@@ -109,17 +109,20 @@ export default function Data() {
     const [selectedCompany, setSelectedCompany] = useState("Spotify"); // Default to Spotify
 
     // State for dark mode detection
-    const [isDarkMode, setIsDarkMode] = useState(
-        () => window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
-    );
+    const [isDarkMode, setIsDarkMode] = useState(false);``
 
-    // UseEffect to listen to system theme changes
+    // UseEffect to detect and listen to system theme changes (client-side only)
     useEffect(() => {
-        const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-        const handleChange = () => setIsDarkMode(mediaQuery.matches);
-        mediaQuery.addEventListener('change', handleChange);
+        if (typeof window !== 'undefined') { // Ensure `window` is available
+            const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+            setIsDarkMode(mediaQuery.matches); // Set the initial dark mode state
 
-        return () => mediaQuery.removeEventListener('change', handleChange);
+            const handleChange = () => setIsDarkMode(mediaQuery.matches);
+            mediaQuery.addEventListener('change', handleChange);
+
+            // Cleanup event listener on unmount
+            return () => mediaQuery.removeEventListener('change', handleChange);
+        }
     }, []);
 
     // Modal state
@@ -144,7 +147,6 @@ export default function Data() {
         setCurrentResults([]);
     };
 
-
     const [loading, setLoading] = useState(false);
     const [isTableVisible, setIsTableVisible] = useState(true);
 
@@ -152,7 +154,7 @@ export default function Data() {
         setSelectedCompany(company);
         setIsTableVisible(false); // Hide table first
         setLoading(true);
-        
+
         // Simulate data fetching delay
         setTimeout(() => {
             setSelectedCompany(company);
